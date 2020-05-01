@@ -98,6 +98,11 @@ final class BirthNumber
         return new \DateTimeImmutable(sprintf('%d-%02d-%02d', $this->year, $this->month, $this->day));
     }
 
+    public function getGender(): Gender
+    {
+        return $this->monthModifier >= 50 ? Gender::female() : Gender::male();
+    }
+
     public function toString(): string
     {
         return sprintf('%02d%02d%02d/%s', $this->year - $this->baseYear, $this->month + $this->monthModifier, $this->day, $this->ending);

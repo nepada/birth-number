@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace NepadaTests\BirthNumber;
 
 use Nepada\BirthNumber\BirthNumber;
+use Nepada\BirthNumber\Gender;
 use Nepada\BirthNumber\InvalidBirthNumberException;
 use NepadaTests\TestCase;
 use Tester\Assert;
@@ -21,16 +22,18 @@ class BirthNumberTest extends TestCase
      * @dataProvider getValid
      * @param string $value
      * @param \DateTimeImmutable $birthDate
+     * @param Gender $gender
      * @param string $asString
      * @param string $asStringWithoutSlash
      */
-    public function testValid(string $value, \DateTimeImmutable $birthDate, string $asString, string $asStringWithoutSlash): void
+    public function testValid(string $value, \DateTimeImmutable $birthDate, Gender $gender, string $asString, string $asStringWithoutSlash): void
     {
         Assert::true(BirthNumber::isValid($value));
 
         $birthNumber = BirthNumber::fromString($value);
 
         Assert::equal($birthDate, $birthNumber->getBirthDate());
+        Assert::same((string) $gender, (string) $birthNumber->getGender());
 
         Assert::same($asString, (string) $birthNumber);
         Assert::same($asString, $birthNumber->toString());
@@ -51,36 +54,42 @@ class BirthNumberTest extends TestCase
             [
                 'value' => '531231123',
                 'birthDate' => new \DateTimeImmutable('1953-12-31'),
+                'gender' => Gender::male(),
                 'asString' => '531231/123',
                 'asStringWithoutSlash' => '531231123',
             ],
             [
                 'value' => '5312311235',
                 'birthDate' => new \DateTimeImmutable('2053-12-31'),
+                'gender' => Gender::male(),
                 'asString' => '531231/1235',
                 'asStringWithoutSlash' => '5312311235',
             ],
             [
                 'value' => "900101 \t 0007",
                 'birthDate' => new \DateTimeImmutable('1990-01-01'),
+                'gender' => Gender::male(),
                 'asString' => '900101/0007',
                 'asStringWithoutSlash' => '9001010007',
             ],
             [
                 'value' => '905101 / 0001',
                 'birthDate' => new \DateTimeImmutable('1990-01-01'),
+                'gender' => Gender::female(),
                 'asString' => '905101/0001',
                 'asStringWithoutSlash' => '9051010001',
             ],
             [
                 'value' => "042101 \t 0030",
                 'birthDate' => new \DateTimeImmutable('2004-01-01'),
+                'gender' => Gender::male(),
                 'asString' => '042101/0030',
                 'asStringWithoutSlash' => '0421010030',
             ],
             [
                 'value' => '047101 / 0090',
                 'birthDate' => new \DateTimeImmutable('2004-01-01'),
+                'gender' => Gender::female(),
                 'asString' => '047101/0090',
                 'asStringWithoutSlash' => '0471010090',
             ],

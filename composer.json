@@ -1,0 +1,47 @@
+{
+    "name": "nepada/birth-number",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "description": "Czech Birth Number value object.",
+    "keywords": ["birth number", "value object", "nette"],
+    "support": {
+        "email": "petr@pada.cz",
+        "issues": "https://github.com/nepada/birth-number/issues"
+    },
+    "authors": [
+        {
+            "name": "Petr Morávek",
+            "email": "petr@pada.cz"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "nette/utils": "^3.0@dev"
+    },
+    "require-dev": {
+        "nette/tester": "^2.3.2",
+        "phpstan/phpstan": "^0.12.19",
+        "phpstan/phpstan-strict-rules": "^0.12.2",
+        "pepakriz/phpstan-exception-rules": "^0.10.1",
+        "phpstan/phpstan-nette": "^0.12.6",
+        "nepada/phpstan-nette-tester": "^0.3.0",
+        "spaze/phpstan-disallowed-calls": "^0.12.1",
+        "php-parallel-lint/php-parallel-lint": "^1.2.0",
+        "nepada/coding-standard": "^7.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nepada\\BirthNumber\\": "src/BirthNumber/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NepadaTests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

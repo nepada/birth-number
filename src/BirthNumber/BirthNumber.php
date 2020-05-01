@@ -113,4 +113,9 @@ final class BirthNumber
         return $this->toString();
     }
 
+    public function equals(BirthNumber $other): bool
+    {
+        return $this->toString() === $other->toString();
+    }
+
 }

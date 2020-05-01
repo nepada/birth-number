@@ -36,6 +36,10 @@ class BirthNumberTest extends TestCase
         Assert::same($asString, $birthNumber->toString());
 
         Assert::same($asStringWithoutSlash, $birthNumber->toStringWithoutSlash());
+
+        Assert::true($birthNumber->equals(BirthNumber::fromString($asString)));
+        Assert::true($birthNumber->equals(BirthNumber::fromString($asStringWithoutSlash)));
+        Assert::false($birthNumber->equals(BirthNumber::fromString('0001010009')));
     }
 
     /**

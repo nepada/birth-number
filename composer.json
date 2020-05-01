@@ -2,7 +2,7 @@
     "name": "nepada/birth-number",
     "type": "library",
     "license": "BSD-3-Clause",
-    "description": "Czech Birth Number value object.",
+    "description": "Czech birth number value object.",
     "keywords": ["birth number", "value object", "nette"],
     "support": {
         "email": "petr@pada.cz",

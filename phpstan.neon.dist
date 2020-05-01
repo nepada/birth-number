@@ -14,3 +14,8 @@ parameters:
         uncheckedExceptions:
             - LogicException
             - Nette\InvalidStateException
+
+    ignoreErrors:
+        -
+            path: src/BirthNumber/BirthNumber.php
+            message: '~Missing @throws Exception annotation~'

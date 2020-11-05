@@ -1,7 +1,7 @@
 Czech birth number value object
 ===============================
 
-[![Build Status](https://travis-ci.org/nepada/birth-number.svg?branch=master)](https://travis-ci.org/nepada/birth-number)
+[![Build Status](https://github.com/nepada/birth-number/workflows/CI/badge.svg)](https://github.com/nepada/birth-number/actions?query=workflow%3ACI+branch%3Amaster)
 [![Coverage Status](https://coveralls.io/repos/github/nepada/birth-number/badge.svg?branch=master)](https://coveralls.io/github/nepada/birth-number?branch=master)
 [![Downloads this Month](https://img.shields.io/packagist/dm/nepada/birth-number.svg)](https://packagist.org/packages/nepada/birth-number)
 [![Latest stable](https://img.shields.io/packagist/v/nepada/birth-number.svg)](https://packagist.org/packages/nepada/birth-number)

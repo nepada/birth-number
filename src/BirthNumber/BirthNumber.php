@@ -33,6 +33,11 @@ final class BirthNumber
         $this->ending = $ending;
     }
 
+    /**
+     * @param string $value
+     * @return BirthNumber
+     * @throws InvalidBirthNumberException
+     */
     public static function fromString(string $value): BirthNumber
     {
         $match = Strings::match($value, '~^\s*(\d\d)(\d\d)(\d\d)\s*/?\s*(\d\d\d)(\d?)\s*$~');

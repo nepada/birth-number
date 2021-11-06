@@ -1,6 +1,5 @@
 includes:
     - vendor/phpstan/phpstan-strict-rules/rules.neon
-    - vendor/pepakriz/phpstan-exception-rules/extension.neon
     - vendor/phpstan/phpstan-nette/extension.neon
     - vendor/phpstan/phpstan-nette/rules.neon
     - vendor/spaze/phpstan-disallowed-calls/extension.neon
@@ -12,12 +11,18 @@ parameters:
     paths:
         - src
 
-    exceptionRules:
-        uncheckedExceptions:
+    exceptions:
+        implicitThrows: false
+        check:
+            missingCheckedExceptionInThrows: true
+            tooWideThrowType: true
+        uncheckedExceptionClasses:
             - LogicException
             - Nette\InvalidStateException
 
     ignoreErrors:
         -
+            message: "#^Method Nepada\\\\BirthNumber\\\\BirthNumber\\:\\:getBirthDate\\(\\) throws checked exception Exception but it's missing from the PHPDoc @throws tag\\.$#"
+            count: 1
             path: src/BirthNumber/BirthNumber.php
-            message: '~Missing @throws Exception annotation~'
+

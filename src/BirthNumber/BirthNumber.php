@@ -38,7 +38,7 @@ final class BirthNumber
      * @return BirthNumber
      * @throws InvalidBirthNumberException
      */
-    public static function fromString(string $value): BirthNumber
+    public static function fromString(string $value): self
     {
         $match = Strings::match($value, '~^\s*(\d\d)(\d\d)(\d\d)\s*/?\s*(\d\d\d)(\d?)\s*$~');
         if ($match === null) {
@@ -123,7 +123,7 @@ final class BirthNumber
         return $this->toString();
     }
 
-    public function equals(BirthNumber $other): bool
+    public function equals(self $other): bool
     {
         return $this->toString() === $other->toString();
     }

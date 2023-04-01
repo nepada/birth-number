@@ -20,17 +20,17 @@ final class Gender
         $this->value = $value;
     }
 
-    public static function male(): Gender
+    public static function male(): self
     {
         return new self(self::MALE);
     }
 
-    public static function female(): Gender
+    public static function female(): self
     {
         return new self(self::FEMALE);
     }
 
-    public static function fromString(string $value): Gender
+    public static function fromString(string $value): self
     {
         if ($value === self::MALE) {
             return self::male();
@@ -63,7 +63,7 @@ final class Gender
         return $this->toString();
     }
 
-    public function equals(Gender $other): bool
+    public function equals(self $other): bool
     {
         return $this->value === $other->value;
     }

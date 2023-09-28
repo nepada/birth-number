@@ -20,11 +20,6 @@ class BirthNumberTest extends TestCase
 
     /**
      * @dataProvider getValid
-     * @param string $value
-     * @param \DateTimeImmutable $birthDate
-     * @param Gender $gender
-     * @param string $asString
-     * @param string $asStringWithoutSlash
      */
     public function testValid(string $value, \DateTimeImmutable $birthDate, Gender $gender, string $asString, string $asStringWithoutSlash): void
     {
@@ -98,8 +93,6 @@ class BirthNumberTest extends TestCase
 
     /**
      * @dataProvider getInvalid
-     * @param string $description
-     * @param string $value
      */
     public function testInvalid(string $description, string $value): void
     {

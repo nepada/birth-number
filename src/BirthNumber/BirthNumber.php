@@ -34,8 +34,6 @@ final class BirthNumber
     }
 
     /**
-     * @param string $value
-     * @return BirthNumber
      * @throws InvalidBirthNumberException
      */
     public static function fromString(string $value): self

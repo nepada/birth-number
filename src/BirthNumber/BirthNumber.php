@@ -103,7 +103,7 @@ final class BirthNumber
 
     public function getGender(): Gender
     {
-        return $this->monthModifier >= 50 ? Gender::female() : Gender::male();
+        return $this->monthModifier >= 50 ? Gender::Female : Gender::Male;
     }
 
     public function toString(): string

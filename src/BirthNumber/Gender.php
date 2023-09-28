@@ -3,54 +3,47 @@ declare(strict_types = 1);
 
 namespace Nepada\BirthNumber;
 
-use Nette;
-
-final class Gender
+enum Gender: string
 {
 
-    use Nette\SmartObject;
+    case Male = 'male';
+    case Female = 'female';
 
-    public const MALE = 'male';
-    public const FEMALE = 'female';
+    /** @deprecated use enum case value instead */
+    final public const MALE = 'male';
 
-    private string $value;
+    /** @deprecated use enum case value instead */
+    final public const FEMALE = 'female';
 
-    private function __construct(string $value)
-    {
-        $this->value = $value;
-    }
-
+    /**
+     * @deprecated use enum case directly
+     */
     public static function male(): self
     {
-        return new self(self::MALE);
+        return self::Male;
     }
 
+    /**
+     * @deprecated use enum case directly
+     */
     public static function female(): self
     {
-        return new self(self::FEMALE);
+        return self::Female;
     }
 
     public static function fromString(string $value): self
     {
-        if ($value === self::MALE) {
-            return self::male();
-        }
-
-        if ($value === self::FEMALE) {
-            return self::female();
-        }
-
-        throw new \InvalidArgumentException("Invalid gender value '$value'.");
+        return self::from($value);
     }
 
     public function isMale(): bool
     {
-        return $this->value === self::MALE;
+        return $this === self::Male;
     }
 
     public function isFemale(): bool
     {
-        return $this->value === self::FEMALE;
+        return $this === self::Female;
     }
 
     public function toString(): string
@@ -58,14 +51,12 @@ final class Gender
         return $this->value;
     }
 
-    public function __toString(): string
-    {
-        return $this->toString();
-    }
-
+    /**
+     * @deprecated use direct enum case comparison instead
+     */
     public function equals(self $other): bool
     {
-        return $this->value === $other->value;
+        return $this === $other;
     }
 
 }

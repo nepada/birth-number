@@ -20,7 +20,6 @@ class GenderTest extends TestCase
     {
         $gender = Gender::fromString(Gender::MALE);
 
-        Assert::same(Gender::MALE, (string) $gender);
         Assert::same(Gender::MALE, $gender->toString());
 
         Assert::true($gender->isMale());
@@ -34,7 +33,6 @@ class GenderTest extends TestCase
     {
         $gender = Gender::fromString(Gender::FEMALE);
 
-        Assert::same(Gender::FEMALE, (string) $gender);
         Assert::same(Gender::FEMALE, $gender->toString());
 
         Assert::false($gender->isMale());
@@ -50,8 +48,8 @@ class GenderTest extends TestCase
             function (): void {
                 Gender::fromString('invalid');
             },
-            \InvalidArgumentException::class,
-            "Invalid gender value 'invalid'.",
+            \ValueError::class,
+            '"invalid" is not a valid backing value for enum %a%',
         );
     }
 

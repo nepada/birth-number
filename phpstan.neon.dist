@@ -21,6 +21,8 @@ parameters:
             missingCheckedExceptionInThrows: true
             tooWideThrowType: true
         uncheckedExceptionClasses:
+            - TypeError
+            - ValueError
             - LogicException
             - Nette\InvalidStateException
 

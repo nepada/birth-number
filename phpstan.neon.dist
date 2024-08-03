@@ -28,7 +28,7 @@ parameters:
 
     ignoreErrors:
         -
-            message: "#^Method Nepada\\\\BirthNumber\\\\BirthNumber\\:\\:getBirthDate\\(\\) throws checked exception Exception but it's missing from the PHPDoc @throws tag\\.$#"
+            message: "#^Method Nepada\\\\BirthNumber\\\\BirthNumber\\:\\:getBirthDate\\(\\) throws checked exception (DateMalformedString)?Exception but it's missing from the PHPDoc @throws tag\\.$#"
             count: 1
             path: src/BirthNumber/BirthNumber.php
 

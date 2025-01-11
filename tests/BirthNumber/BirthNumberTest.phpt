@@ -41,7 +41,7 @@ class BirthNumberTest extends TestCase
     }
 
     /**
-     * @return mixed[]
+     * @return list<mixed[]>
      */
     protected function getValid(): array
     {
@@ -106,7 +106,7 @@ class BirthNumberTest extends TestCase
     }
 
     /**
-     * @return mixed[]
+     * @return list<mixed[]>
      */
     protected function getInvalid(): array
     {

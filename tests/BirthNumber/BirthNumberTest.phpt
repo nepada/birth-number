@@ -21,7 +21,13 @@ class BirthNumberTest extends TestCase
     /**
      * @dataProvider getValid
      */
-    public function testValid(string $value, \DateTimeImmutable $birthDate, Gender $gender, string $asString, string $asStringWithoutSlash): void
+    public function testValid(
+        string $value,
+        \DateTimeImmutable $birthDate,
+        Gender $gender,
+        string $asString,
+        string $asStringWithoutSlash,
+    ): void
     {
         Assert::true(BirthNumber::isValid($value));
 
@@ -94,7 +100,10 @@ class BirthNumberTest extends TestCase
     /**
      * @dataProvider getInvalid
      */
-    public function testInvalid(string $description, string $value): void
+    public function testInvalid(
+        string $description,
+        string $value,
+    ): void
     {
         Assert::false(BirthNumber::isValid($value), $description);
         Assert::exception(

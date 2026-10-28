@@ -11,26 +11,15 @@ final class BirthNumber
 
     use Nette\SmartObject;
 
-    private readonly int $year;
-
-    private readonly int $month;
-
-    private readonly int $day;
-
-    private readonly int $baseYear;
-
-    private readonly int $monthModifier;
-
-    private readonly string $ending;
-
-    private function __construct(int $year, int $month, int $day, int $baseYear, int $monthModifier, string $ending)
+    private function __construct(
+        private readonly int $year,
+        private readonly int $month,
+        private readonly int $day,
+        private readonly int $baseYear,
+        private readonly int $monthModifier,
+        private readonly string $ending,
+    )
     {
-        $this->year = $year;
-        $this->month = $month;
-        $this->day = $day;
-        $this->baseYear = $baseYear;
-        $this->monthModifier = $monthModifier;
-        $this->ending = $ending;
     }
 
     /**

@@ -19,6 +19,3 @@ parameters:
     fileExtensions:
         - php
         - phpt
-
-    excludePaths:
-        - tests/temp/*
